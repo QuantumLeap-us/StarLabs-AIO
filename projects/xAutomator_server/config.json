@@ -1,0 +1,12 @@
+{
+    "take_data_random": false,
+    "max_tasks_retries": 3,
+    "pause_between_tasks": [
+        2,
+        4
+    ],
+    "pause_between_accounts": [
+        1,
+        3
+    ]
+}

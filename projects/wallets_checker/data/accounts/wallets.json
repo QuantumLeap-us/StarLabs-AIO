@@ -1,0 +1,68 @@
+{
+    "accounts_name": "wallets",
+    "accounts": [
+        {
+            "account_data": "address",
+            "address": "address",
+            "balance": 0,
+            "proxy": [
+                "http://user:pass@ip:port"
+            ],
+            "last_check": 0,
+            "tokens": {
+                "quantity": 0,
+                "data": []
+            },
+            "nfts": {
+                "quantity": 0,
+                "data": []
+            },
+            "pools": {
+                "quantity": 0,
+                "data": []
+            }
+        },
+        {
+            "account_data": "private_key",
+            "address": "private_key",
+            "balance": 0,
+            "proxy": [
+                "http://user:pass@ip:port"
+            ],
+            "last_check": 0,
+            "tokens": {
+                "quantity": 0,
+                "data": []
+            },
+            "nfts": {
+                "quantity": 0,
+                "data": []
+            },
+            "pools": {
+                "quantity": 0,
+                "data": []
+            }
+        },
+        {
+            "account_data": "mnemo phrase",
+            "address": "mnemo phrase",
+            "balance": 0,
+            "proxy": [
+                "http://user:pass@ip:port"
+            ],
+            "last_check": 0,
+            "tokens": {
+                "quantity": 0,
+                "data": []
+            },
+            "nfts": {
+                "quantity": 0,
+                "data": []
+            },
+            "pools": {
+                "quantity": 0,
+                "data": []
+            }
+        }
+    ]
+}

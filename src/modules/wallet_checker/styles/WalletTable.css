@@ -1,0 +1,407 @@
+.wallet-checker-table-container {
+    margin-top: 20px;
+    background: rgba(33, 150, 243, 0.02);
+    border-radius: 16px;
+    padding: 20px;
+    position: relative;
+    border: 1px solid rgba(33, 150, 243, 0.1);
+    box-shadow: 0 4px 24px rgba(33, 150, 243, 0.05);
+}
+
+.wallet-checker-table-header {
+    margin-bottom: 20px;
+}
+
+.wallet-checker-table-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.wallet-checker-table-divider {
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        rgba(33, 150, 243, 0),
+        rgba(33, 150, 243, 0.1),
+        rgba(33, 150, 243, 0)
+    );
+    margin: 0 20px;
+}
+
+.wallet-checker-table-check-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid rgba(46, 213, 115, 0.2);
+    border-radius: 10px;
+    background: rgba(46, 213, 115, 0.1);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2ed573;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    letter-spacing: 0.3px;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.wallet-checker-table-check-btn:hover {
+    background: rgba(46, 213, 115, 0.15);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(46, 213, 115, 0.15);
+    border-color: rgba(46, 213, 115, 0.3);
+}
+
+.wallet-checker-table-check-btn.checking {
+    background: rgba(255, 199, 44, 0.15);
+    color: #ffc72c;
+    border-color: rgba(255, 199, 44, 0.3);
+}
+
+.wallet-checker-table-check-btn.secondary {
+    background: rgba(33, 150, 243, 0.05);
+    border: 1px solid rgba(33, 150, 243, 0.15);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.wallet-checker-table-check-btn.secondary:hover {
+    background: rgba(33, 150, 243, 0.1);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.1);
+    border-color: rgba(33, 150, 243, 0.3);
+}
+
+.wallet-checker-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    background: transparent;
+}
+
+.wallet-checker-table th {
+    text-align: left;
+    padding: 18px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    background: linear-gradient(
+        to bottom,
+        rgba(33, 150, 243, 0.02),
+        transparent
+    );
+    border-bottom: 2px solid rgba(33, 150, 243, 0.08);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+}
+
+.wallet-checker-table th:nth-child(1) { width: 20px; }
+.wallet-checker-table th:nth-child(2) { width: 37.5%; }
+.wallet-checker-table th:nth-child(3) { width: 37.5%; }
+.wallet-checker-table th:nth-child(4) { width: 12.5%; }
+.wallet-checker-table th:nth-child(5) { width: 12.5%; }
+.wallet-checker-table th:nth-child(6) { width: 80px; }
+
+/* Мягкие разделители для заголовков */
+.wallet-checker-table th:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 25%;
+    height: 50%;
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        rgba(33, 150, 243, 0.02),
+        rgba(33, 150, 243, 0.05),
+        rgba(33, 150, 243, 0.02)
+    );
+}
+
+/* Добавим небольшой эффект при наведении на заголовок */
+.wallet-checker-table th:hover {
+    background: linear-gradient(
+        to bottom,
+        rgba(33, 150, 243, 0.03),
+        rgba(33, 150, 243, 0.01)
+    );
+}
+
+.wallet-checker-table td {
+    padding: 14px 16px;
+    font-size: 13px;
+    position: relative;
+    background: transparent;
+}
+
+/* Мягкие разделители для ячеек */
+.wallet-checker-table td:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 25%;
+    height: 50%;
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        rgba(33, 150, 243, 0),
+        rgba(33, 150, 243, 0.05),
+        rgba(33, 150, 243, 0)
+    );
+}
+
+/* Мягкие горизонтальные ��азделители */
+.wallet-checker-table tr:not(:last-child) td {
+    border-bottom: none;
+    position: relative;
+}
+
+/* Мягкие разделители между строками */
+.wallet-checker-table tr:not(:last-child) td::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        rgba(33, 150, 243, 0),
+        rgba(33, 150, 243, 0.05),
+        rgba(33, 150, 243, 0)
+    );
+}
+
+.wallet-checker-table tr:hover {
+    background: linear-gradient(
+        to right,
+        rgba(33, 150, 243, 0.02),
+        rgba(33, 150, 243, 0.04),
+        rgba(33, 150, 243, 0.02)
+    );
+}
+
+/* Стили для развернутой строки */
+.wallet-checker-table tr.expanded {
+    background: linear-gradient(
+        to right,
+        rgba(33, 150, 243, 0.03),
+        rgba(33, 150, 243, 0.05),
+        rgba(33, 150, 243, 0.03)
+    );
+}
+
+/* Обновленные стили для деталей */
+.wallet-checker-table-details {
+    /* убираем background */
+}
+
+.wallet-checker-table-details-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wallet-checker-table-token-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr 1fr 0.8fr 1.5fr;
+    gap: 10px;
+    padding: 8px;
+    align-items: center;
+}
+
+.wallet-checker-table-token-cell {
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* Важно для работы text-overflow */
+}
+
+.wallet-checker-table-token-label {
+    color: #666;
+    font-size: 0.85em;
+    margin-bottom: 4px;
+}
+
+.wallet-checker-table-token-value {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Специальные стили для CA */
+.wallet-checker-table-token-cell.ca-cell {
+    position: relative;
+}
+
+.wallet-checker-table-token-cell.ca-cell .wallet-checker-table-token-value {
+    cursor: pointer;
+}
+
+/* Показываем всплывающий текст только при наведении */
+.wallet-checker-table-token-cell.ca-cell:hover
+    .wallet-checker-table-token-value::after {
+    content: attr(data-full-address);
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background: #333;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+/* Эффект при наведении на всплывающий текст */
+.wallet-checker-table-token-cell.ca-cell:hover
+    .wallet-checker-table-token-value::after:hover {
+    background: #444;
+}
+
+/* Эф��ект при клике */
+.wallet-checker-table-token-cell.ca-cell:hover
+    .wallet-checker-table-token-value:active::after {
+    background: #555;
+}
+
+.wallet-checker-table-expand {
+    width: 40px;
+}
+
+.wallet-checker-table-expand-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.wallet-checker-table-expand-btn:hover {
+    color: #fff;
+    background: rgba(33, 150, 243, 0.1);
+}
+
+.wallet-checker-table-expand-btn .rotated {
+    transform: rotate(90deg);
+}
+
+.wallet-checker-table-actions {
+    display: none;
+}
+
+.wallet-checker-table-action-btn {
+    display: none;
+}
+
+.wallet-checker-table-details {
+    background: rgba(33, 150, 243, 0.02);
+}
+
+.wallet-checker-table-details-content {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.wallet-checker-table-details-section {
+    padding: 16px;
+    background: rgba(33, 150, 243, 0.03);
+    border-radius: 10px;
+    border: 1px solid rgba(33, 150, 243, 0.1);
+}
+
+.wallet-checker-table-details-section h4 {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.wallet-checker-table-details-section p {
+    margin: 0;
+    font-size: 14px;
+    color: #fff;
+}
+
+.wallet-checker-table-details-networks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.wallet-checker-table-network-badge {
+    padding: 4px 12px;
+    background: rgba(33, 150, 243, 0.1);
+    border-radius: 12px;
+    font-size: 12px;
+    color: #fff;
+}
+
+/* Анимация для разворачивания деталей */
+.wallet-checker-table-expand-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.wallet-checker-table tr.expanded {
+    background: rgba(33, 150, 243, 0.03);
+}
+
+.wallet-checker-table-header h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+/* Добавим стили для иконок в кнопках */
+.wallet-checker-table-check-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.wallet-checker-table-check-btn:hover svg {
+    transform: translateY(-1px);
+}
+
+.wallet-checker-table-address,
+.wallet-checker-table-private-key {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0; /* Важно для работы text-overflow */
+}
+
+/* При наведении показываем полное значение в тултипе */
+.wallet-checker-table-address:hover,
+.wallet-checker-table-private-key:hover {
+  position: relative;
+}
+
+.wallet-checker-table-address:hover::after,
+.wallet-checker-table-private-key:hover::after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  white-space: nowrap;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 1000;
+}

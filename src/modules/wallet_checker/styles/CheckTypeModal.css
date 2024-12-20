@@ -1,0 +1,106 @@
+.check-type-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 31, 46, 0.9);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.check-type-modal {
+  background: linear-gradient(145deg, #1e2538, #1a1f2e);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  border: 1px solid rgba(33, 150, 243, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 24px;
+}
+
+.check-type-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.check-type-modal-close:hover {
+  color: #fff;
+  background: rgba(33, 150, 243, 0.1);
+}
+
+.check-type-modal h2 {
+  text-align: center;
+  margin: 0 0 24px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.check-type-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.check-type-btn {
+  padding: 12px 24px;
+  border: 1px solid rgba(33, 150, 243, 0.2);
+  border-radius: 10px;
+  background: rgba(33, 150, 243, 0.1);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+  min-width: 140px;
+}
+
+.check-type-btn:hover {
+  background: rgba(33, 150, 243, 0.2);
+  border-color: rgba(33, 150, 243, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.2);
+}
+
+.check-type-btn.rabby {
+  background: rgba(124, 58, 237, 0.1);
+  border-color: rgba(124, 58, 237, 0.2);
+  color: #fff;
+}
+
+.check-type-btn.rabby:hover {
+  background: rgba(124, 58, 237, 0.2);
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.2);
+}
+
+.check-type-btn.debank {
+  background: rgba(37, 99, 235, 0.1);
+  border-color: rgba(37, 99, 235, 0.2);
+  color: #fff;
+}
+
+.check-type-btn.debank:hover {
+  background: rgba(37, 99, 235, 0.2);
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+}
+  

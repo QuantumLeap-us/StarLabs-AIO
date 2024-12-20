@@ -1,0 +1,26 @@
+{
+    "accounts_name": "wallets_2",
+    "accounts": [
+        {
+            "account_data": "sadfasd",
+            "address": "sadfasd",
+            "balance": 0,
+            "proxy": [
+                "asdfasdf"
+            ],
+            "last_check": 0,
+            "tokens": {
+                "quantity": 0,
+                "data": []
+            },
+            "nfts": {
+                "quantity": 0,
+                "data": []
+            },
+            "pools": {
+                "quantity": 0,
+                "data": []
+            }
+        }
+    ]
+}

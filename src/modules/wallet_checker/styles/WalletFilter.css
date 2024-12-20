@@ -1,0 +1,211 @@
+.wallet-filter {
+  background: rgba(33, 150, 243, 0.03);
+  border: 1px solid rgba(33, 150, 243, 0.1);
+  border-radius: 12px;
+  margin-top: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+.wallet-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.wallet-filter-header h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.wallet-filter-close-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.wallet-filter-close-btn:hover {
+  color: #fff;
+  background: rgba(33, 150, 243, 0.1);
+}
+
+.wallet-filter-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.wallet-filter-section {
+  padding: 16px;
+  background: rgba(33, 150, 243, 0.02);
+  border-radius: 8px;
+  border: 1px solid rgba(33, 150, 243, 0.08);
+}
+
+.wallet-filter-section h4 {
+  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+.wallet-filter-checkboxes {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.wallet-filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.wallet-filter-checkbox:hover {
+  background: rgba(33, 150, 243, 0.05);
+}
+
+.wallet-filter-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.wallet-filter-checkbox span {
+  position: relative;
+  padding-left: 28px;
+  user-select: none;
+}
+
+.wallet-filter-checkbox span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(33, 150, 243, 0.4);
+  border-radius: 4px;
+  background: rgba(33, 150, 243, 0.03);
+  transition: all 0.2s ease;
+}
+
+.wallet-filter-checkbox span::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  width: 6px;
+  height: 10px;
+  border: solid #2196f3;
+  border-width: 0 2px 2px 0;
+  transform-origin: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wallet-filter-checkbox input[type="checkbox"]:checked + span::before {
+  border-color: #2196f3;
+  background: rgba(33, 150, 243, 0.1);
+}
+
+.wallet-filter-checkbox input[type="checkbox"]:checked + span::after {
+  transform: translateY(-75%) rotate(45deg) scale(1);
+}
+
+.wallet-filter-checkbox input[type="checkbox"]:focus + span::before {
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+}
+
+.wallet-filter-checkbox:hover span::before {
+  border-color: #2196f3;
+}
+
+.wallet-filter-checkbox input[type="checkbox"]:active + span::before {
+  transform: translateY(-50%) scale(0.9);
+}
+
+.wallet-filter-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.wallet-filter-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wallet-filter-input-group label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.wallet-filter-input-group input {
+  padding: 8px 12px;
+  border: 1px solid rgba(33, 150, 243, 0.2);
+  border-radius: 6px;
+  background: rgba(33, 150, 243, 0.03);
+  color: #fff;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.wallet-filter-input-group input:focus {
+  outline: none;
+  border-color: rgba(33, 150, 243, 0.4);
+  background: rgba(33, 150, 243, 0.05);
+}
+
+.wallet-filter-footer {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.wallet-filter-apply-btn,
+.wallet-filter-reset-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wallet-filter-apply-btn {
+  background: #2196f3;
+  color: white;
+  border: none;
+}
+
+.wallet-filter-apply-btn:hover {
+  background: #1976d2;
+}
+
+.wallet-filter-reset-btn {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(33, 150, 243, 0.3);
+}
+
+.wallet-filter-reset-btn:hover {
+  background: rgba(33, 150, 243, 0.1);
+} 

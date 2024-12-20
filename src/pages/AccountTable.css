@@ -1,0 +1,111 @@
+.account-table-row {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    padding: 12px 16px;
+    border-bottom: 1px solid #334155;
+    align-items: center;
+    color: #e2e8f0;
+}
+
+.account-table-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+.account-edit-input {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    padding: 6px 12px;
+    color: #e2e8f0;
+    font-size: 14px;
+    width: 100%;
+}
+
+.account-edit-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 189, 126, 0.1);
+}
+
+.account-action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    transition: all 0.2s ease;
+}
+
+.account-action-btn:hover {
+    background: rgba(148, 163, 184, 0.1);
+    color: #e2e8f0;
+}
+
+.account-action-btn.save {
+    color: var(--accent-color);
+}
+
+.account-action-btn.save:hover {
+    background: rgba(0, 189, 126, 0.1);
+}
+
+.account-action-btn.delete:hover {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    padding: 12px 16px;
+    background: #1e293b;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #e2e8f0;
+    border: 1px solid #334155;
+}
+
+.accounts-table-header-cell {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+}
+
+.accounts-table-header-cell:nth-child(1) {
+    padding-left: 0;
+}
+.accounts-table-header-cell:nth-child(2) {
+    padding-left: 0;
+}
+.accounts-table-header-cell:nth-child(3) {
+    padding-left: 0;
+}
+.accounts-table-header-cell:nth-child(4) {
+    padding-left: 0;
+}
+
+.accounts-table-container .table-header {
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+}
+
+.account-table-cell:nth-child(1) {
+    padding-left: 0;
+}
+.account-table-cell:nth-child(2) {
+    padding-left: 0;
+}
+.account-table-cell:nth-child(3) {
+    padding-left: 0;
+}
+.account-table-cell:nth-child(4) {
+    padding-left: 0;
+}

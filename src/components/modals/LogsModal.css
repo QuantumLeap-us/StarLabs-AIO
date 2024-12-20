@@ -1,0 +1,111 @@
+.logs-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logs-modal-content {
+    background: #1e293b;
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 14px;
+}
+
+.logs-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logs-modal-title {
+    margin: 0;
+    color: #e2e8f0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.logs-modal-close {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.logs-modal-close:hover {
+    color: #e2e8f0;
+}
+
+.logs-modal-container {
+    max-height: calc(80vh - 120px);
+    overflow-y: auto;
+    padding: 8px;
+}
+
+.logs-modal-item {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: monospace;
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+.logs-modal-item:last-child {
+    border-bottom: none;
+}
+
+.logs-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 16px;
+}
+
+.logs-modal-button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: #2d3748;
+    color: #e2e8f0;
+    border: 1px solid #4a5568;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.logs-modal-button:hover {
+    background: #4a5568;
+}
+
+/* Стили для скроллбара */
+.logs-modal-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.logs-modal-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.logs-modal-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.logs-modal-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+} 

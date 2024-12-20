@@ -1,0 +1,181 @@
+.create-wallet-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 31, 46, 0.9);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.create-wallet-modal {
+    background: linear-gradient(145deg, #1e2538, #1a1f2e);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 520px;
+    position: relative;
+    border: 1px solid rgba(33, 150, 243, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.create-wallet-modal-header {
+    padding: 24px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(33, 150, 243, 0.03);
+    border-bottom: 1px solid rgba(33, 150, 243, 0.1);
+}
+
+.create-wallet-modal-header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.create-wallet-modal-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.create-wallet-modal-close:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.create-wallet-modal-form {
+    padding: 16px;
+}
+
+.create-wallet-modal-input-group {
+    border-radius: 12px;
+    padding: 16px;
+    transition: all 0.2s ease;
+}
+
+.create-wallet-modal-input-group:first-child label {
+    margin-bottom: 20px;
+    display: block;
+    font-size: 1.2em;
+}
+
+.create-wallet-modal-input-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.create-wallet-modal-input-header label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.create-wallet-modal-import-btn {
+    padding: 10px 20px;
+    border: 1px solid rgba(33, 150, 243, 0.2);
+    border-radius: 10px;
+    background: rgba(33, 150, 243, 0.1);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.create-wallet-modal-import-btn:hover {
+    background: rgba(33, 150, 243, 0.2);
+    border-color: rgba(33, 150, 243, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.2);
+}
+
+.create-wallet-modal-input-group input,
+.create-wallet-modal-input-group textarea {
+    width: 95%;
+    padding: 12px;
+    background: rgba(33, 150, 243, 0.05);
+    border: 1px solid rgba(33, 150, 243, 0.2);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    resize: none;
+}
+
+.create-wallet-modal-input-group input:focus,
+.create-wallet-modal-input-group textarea:focus {
+    outline: none;
+    border-color: rgba(33, 150, 243, 0.4);
+    background: rgba(33, 150, 243, 0.08);
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+}
+
+.create-wallet-modal-input-group textarea {
+    min-height: 150px;
+}
+
+.create-wallet-modal-footer {
+    padding-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    border-top: 1px solid rgba(33, 150, 243, 0.1);
+}
+
+.create-wallet-modal-cancel,
+.create-wallet-modal-submit {
+    padding: 12px 24px;
+    border: 1px solid rgba(33, 150, 243, 0.2);
+    border-radius: 10px;
+    background: rgba(33, 150, 243, 0.1);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.create-wallet-modal-submit:hover,
+.create-wallet-modal-cancel:hover {
+    background: rgba(33, 150, 243, 0.2);
+    border-color: rgba(33, 150, 243, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.2);
+}
+
+.create-wallet-modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.create-wallet-modal::-webkit-scrollbar-track {
+    background: rgba(33, 150, 243, 0.03);
+    border-radius: 4px;
+}
+
+.create-wallet-modal::-webkit-scrollbar-thumb {
+    background: rgba(33, 150, 243, 0.1);
+    border-radius: 4px;
+}
+
+.create-wallet-modal::-webkit-scrollbar-thumb:hover {
+    background: rgba(33, 150, 243, 0.2);
+}

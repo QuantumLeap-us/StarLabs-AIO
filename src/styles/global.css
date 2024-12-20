@@ -1,0 +1,32 @@
+:root {
+  --bg-primary: #1E2028;
+  --bg-secondary: #252833;
+  --text-primary: #ffffff;
+  --text-secondary: #9DA2AE;
+  --accent-color: #00bd7e;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background-color: var(--bg-secondary);
+  padding: 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+} 

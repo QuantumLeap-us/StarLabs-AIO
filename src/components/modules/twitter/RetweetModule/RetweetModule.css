@@ -1,0 +1,649 @@
+.retweet-module {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.retweet-module-controls {
+    display: grid;
+    grid-template-columns: 45% 25% 30%;
+    gap: 0;
+    position: relative;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.retweet-module-controls-divider-left,
+.retweet-module-controls-divider-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.retweet-module-controls-divider-left {
+    left: 45%;
+}
+
+.retweet-module-controls-divider-right {
+    right: 30%;
+}
+
+.retweet-controls-section {
+    width: 100%;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.retweet-buttons-row {
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+}
+
+.retweet-choose-accounts-btn,
+.retweet-default-settings-btn {
+    width: 48%;
+    padding: 1em 0;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-size: clamp(0.8em, 1vw, 0.9em);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8em;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.retweet-choose-accounts-btn:hover,
+.retweet-default-settings-btn:hover {
+    transform: translateY(-2px);
+    background: #2d3748;
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 12px rgba(0, 189, 126, 0.15);
+}
+
+.retweet-choose-accounts-btn:active,
+.retweet-default-settings-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 189, 126, 0.1);
+}
+
+.retweet-choose-accounts-btn {
+    background: linear-gradient(145deg, #1e293b, #2d3748);
+}
+
+.retweet-default-settings-btn {
+    background: linear-gradient(145deg, #1a1f2e, #2d3748);
+}
+
+.retweet-usernames-section {
+    width: 80%;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    background: none;
+    border: none;
+}
+
+.retweet-users-input {
+    width: 95%;
+    height: 2.8em;
+    padding: 0.8em 1em;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: clamp(0.8em, 1vw, 0.9em);
+    transition: all 0.2s ease;
+    margin-bottom: 1em;
+}
+
+.retweet-threads-input,
+.retweet-range-input {
+    width: 100%;
+    height: 2.5em;
+    padding: 0.5em 0.8em;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: clamp(0.8em, 1vw, 0.9em);
+    transition: all 0.2s ease;
+
+    /* Remove spinner arrows for Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Remove spinner arrows for Firefox */
+    -moz-appearance: textfield;
+}
+
+.retweet-users-list-container {
+    width: 100%;
+    height: 12.5em;
+    padding: 0.5em;
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    overflow-y: auto;
+}
+
+.retweet-users-list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.retweet-users-list-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.retweet-users-list-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.retweet-users-list-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.retweet-user-item {
+    padding: 0.6em 0.8em;
+    margin: 0.3em 0;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.retweet-user-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(2px);
+}
+
+.retweet-remove-user-btn {
+    background: none;
+    border: none;
+    color: rgba(239, 68, 68, 0.8);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.retweet-remove-user-btn:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: rgb(239, 68, 68);
+}
+
+.retweet-status-section {
+    width: 100%;
+    margin: 1.5em auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.retweet-status-box {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: clamp(1.2em, 3vw, 1.8em) clamp(1.5em, 4vw, 2.5em);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.8em, 2vw, 1.2em);
+    width: clamp(180px, 50%, 300px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+}
+
+.retweet-status-label {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 12px;
+}
+
+.retweet-status-counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2em;
+    width: 100%;
+}
+
+.retweet-status-numbers {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.retweet-current,
+.retweet-total {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-primary);
+    min-width: 40px;
+    text-align: center;
+}
+
+.retweet-current {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.retweet-separator {
+    color: var(--text-secondary);
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0 4px;
+}
+
+.retweet-progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.retweet-progress-fill {
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+/* Добавляем анимацию свечения при обновлении */
+.retweet-progress-fill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transform: translateX(-100%);
+    animation: shimmer 1s ease-out;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Анимация для чисел */
+@keyframes numberUpdate {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.retweet-current.updating {
+    transform: scale(1.1);
+    color: var(--accent-color);
+}
+
+.retweet-control-group {
+    width: 48%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.retweet-control-label {
+    margin-bottom: 0.5em;
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.retweet-range-inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.retweet-range-input {
+    width: 45% !important;
+    margin: 0 5%;
+    text-align: center;
+    padding: 0.5em 0.8em;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: clamp(0.8em, 1vw, 0.9em);
+    transition: all 0.2s ease;
+}
+
+.retweet-threads-input {
+    width: 83%;
+    text-align: center;
+}
+
+.retweet-start-btn,
+.retweet-stop-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.retweet-start-btn {
+    margin: 0 auto;
+    height: 3.5em;
+    width: 35%;
+    color: #22c55e;
+    border: 2px solid #22c55e;
+}
+
+.retweet-start-btn:hover {
+    background: rgba(34, 197, 94, 0.1);
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+}
+
+.retweet-start-btn:active {
+    background: rgba(34, 197, 94, 0.2);
+    transform: scale(0.98);
+}
+
+.retweet-stop-btn {
+    color: #ef4444;
+    border: 2px solid #ef4444;
+}
+
+.retweet-stop-btn:hover {
+    background: rgba(239, 68, 68, 0.1);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
+}
+
+.retweet-stop-btn:active {
+    background: rgba(239, 68, 68, 0.2);
+    transform: scale(0.98);
+}
+
+/* Добавим эффект пульсации для кнопки Stop при активном состоянии */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+}
+
+.retweet-stop-btn.active {
+    animation: pulse 2s infinite;
+}
+
+.retweet-module-table {
+    margin-top: 2em;
+    flex: 1;
+    overflow: auto;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    .retweet-status-box {
+        width: 85%;
+        padding: 1em 1.5em;
+    }
+
+    .retweet-status-numbers {
+        font-size: 1.5em;
+    }
+
+    .retweet-progress-bar {
+        width: 120px;
+        height: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .retweet-status-box {
+        width: 90%;
+        padding: 0.8em 1.2em;
+    }
+
+    .retweet-status-numbers {
+        font-size: 1.3em;
+    }
+
+    .retweet-progress-bar {
+        width: 100px;
+    }
+}
+
+.retweet-account-select-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.retweet-account-select-container {
+    width: 45%;
+    max-width: 600px;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.retweet-accounts-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.retweet-group-container {
+    background: #1e293b;
+    border-radius: 8px;
+    padding: 16px;
+    position: relative;
+    border: 1px solid #334155;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.retweet-group-container:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 20px rgba(0, 189, 126, 0.1);
+}
+
+.retweet-group-container.active {
+    border-color: var(--accent-color);
+    background: #1a365d;
+}
+
+.retweet-group-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.retweet-group-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #e2e8f0;
+}
+
+.retweet-accounts-count {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+.retweet-accounts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+}
+
+.retweet-accounts-header h2 {
+    color: var(--text-primary);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.retweet-close-modal-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.retweet-close-modal-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.retweet-accounts-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin: 16px 0;
+}
+
+.retweet-user-item span {
+    display: block;
+    direction: rtl; /* Текст будет начинаться справа */
+    text-align: left; /* Но выравнивание останется слева */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-right: 8px;
+    position: relative;
+}
+
+.retweet-user-item span:hover {
+    overflow: visible;
+    white-space: normal;
+    word-break: break-all;
+    background: var(--bg-primary); /* Чтобы текст был читаем при переносе */
+    z-index: 1;
+}
+
+.retweet-user-item button {
+    flex-shrink: 0; /* Кнопка не будет сжиматься */
+}
+
+.retweet-logs-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.retweet-logs-modal {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    padding: 24px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.retweet-logs-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.retweet-logs-modal-header h3 {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.retweet-logs-modal-content {
+    overflow-y: auto;
+    max-height: calc(80vh - 100px);
+    padding: 8px;
+}
+
+.retweet-log-entry {
+    padding: 8px 12px;
+    margin: 4px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}

@@ -1,0 +1,14 @@
+{
+    "scrape_bios": false,
+    "scrape_profile_pictures": false,
+    "scrape_backgrounds": false,
+    "scrape_names": true,
+    "scrape_ids": true,
+    "scrape_usernames": false,
+    "use_proxy_for_downloading_pictures": false,
+    "only_verified_accounts": false,
+    "minimum_followers": 0,
+    "minimum_followings": 0,
+    "minimum_favourites": 12,
+    "minimum_tweets": 0
+}

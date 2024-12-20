@@ -1,0 +1,28 @@
+profile_pictures:
+    scrape: yes
+    use_proxies_for_downloading: no
+    
+background_pictures:
+    scrape: yes
+    use_proxies_for_downloading: no
+    
+names:
+    scrape: yes
+
+bios:
+    scrape: yes
+
+ids:
+    scrape: yes
+
+usernames:
+    scrape: yes
+
+filter:
+    minimum_followers_count: 0
+    minimum_following_count: 0
+    minimum_favourites_count: 0
+    minimum_tweets_count: 0
+    # verified is string, should be written with double quotes " "
+    # verified can be "no", "yes", or "any". "any" means bot will parse all the users
+    verified: "any"

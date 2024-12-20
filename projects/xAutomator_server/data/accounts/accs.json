@@ -1,0 +1,10 @@
+{
+    "accounts_name": "accs",
+    "accounts": [
+        {
+            "token": "token",
+            "proxy": "proxy",
+            "status": "active"
+        }
+    ]
+}
