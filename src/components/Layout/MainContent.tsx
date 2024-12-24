@@ -1,9 +1,13 @@
+import './MainContent.css';
+
 const MainContent = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="main-content">
-      {children}
+      <div className="main-content-inner">
+        {children}
+      </div>
     </main>
   )
 }
 
-export default MainContent 
+export default MainContent

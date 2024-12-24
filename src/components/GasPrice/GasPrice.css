@@ -1,0 +1,167 @@
+.gas-price-container {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gas-price-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gas-price-header h2 {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.chain-id {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.speed-indicator {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.gas-price-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.gas-price-card {
+  background: rgba(20, 25, 35, 0.5);
+  border-radius: 12px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+  position: relative;
+  min-height: 160px;
+}
+
+.gas-price-card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.priority-fee {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.priority-fee-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 5px;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+.max-fee {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.max-fee-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 5px;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+.probability {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 4px 0;
+}
+
+.probability-99 {
+  color: #4CAF50;
+}
+
+.probability-95 {
+  color: #8BC34A;
+}
+
+.probability-90 {
+  color: #CDDC39;
+}
+
+.probability-80 {
+  color: #FFC107;
+}
+
+.probability-70 {
+  color: #FF9800;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+}
+
+.error {
+  text-align: center;
+  padding: 40px;
+  color: #f44336;
+}
+
+@media (max-width: 1200px) {
+  .gas-price-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gas-price-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .gas-price-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .chain-id {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .gas-price-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gas-price-card {
+    min-height: 140px;
+  }
+}

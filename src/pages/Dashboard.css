@@ -7,14 +7,24 @@ body {
     color: var(--text-primary);
     width: 100%;
     box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-header {
+    margin-bottom: 24px;
+    width: 100%;
 }
 
 .dashboard-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 24px;
     width: 100%;
     box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .dashboard-select-button {
@@ -250,4 +260,10 @@ body {
     background: linear-gradient(145deg, #1a365d, #1e293b);
     border-color: var(--accent-color);
     box-shadow: 0 4px 15px rgba(0, 189, 126, 0.15);
+}
+
+.gas-price-wrapper {
+  padding: 24px 24px 0;
+  width: 100%;
+  box-sizing: border-box;
 }

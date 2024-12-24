@@ -4,14 +4,9 @@ import CommentModule from '../components/modules/twitter/CommentModule/CommentMo
 import RetweetModule from '../components/modules/twitter/RetweetModule/RetweetModule';
 import TweetModule from '../components/modules/twitter/TweetModule/TweetModule';
 import VoteModule from '../components/modules/twitter/VoteModule/Vote';
-import ChangeProfile from '../components/modules/twitter/ChangeProfileModule/ChangeProfile';
-import Settings from './Settings';
-import Accounts from './Accounts';
-import GasPrice from '../components/GasPrice/GasPrice';
-
-import "./Dashboard.css";
-import { FiUser, FiUserX, FiChevronDown, FiPlay, FiCommand, FiSettings, FiUsers } from "react-icons/fi";
 import LikeModule from '../components/modules/twitter/LikeModule/LikeModule';
+import { FiCommand, FiChevronDown } from "react-icons/fi";
+import "./Dashboard.css";
 
 interface ActionConfig {
   maxGwei?: string;
@@ -22,12 +17,10 @@ interface ActionConfig {
   walletsInBatch?: string;
 }
 
-const Dashboard = () => {
+const TwitterDashboard = () => {
   const [selectedAction, setSelectedAction] = useState<string | null>(null);
-  const [selectedSection, setSelectedSection] = useState<'twitter' | 'settings' | 'accounts'>('twitter');
   const [accountGroups, setAccountGroups] = useState<string[]>([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
-  const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
 
   const actions = [
     'Follow',
@@ -37,8 +30,6 @@ const Dashboard = () => {
     'Comment',
     'Unfollow',
     'Unlike',
-    // 'Unretweet',
-    // 'Change profile',
     'Vote in the poll',
   ];
 
@@ -86,39 +77,6 @@ const Dashboard = () => {
             accountGroups={accountGroups}
           />
         );
-      case 'Change profile':
-        return (
-          <ChangeProfile 
-            accountGroups={accountGroups}
-          />
-        );
-      default:
-        return null;
-    }
-  };
-
-  const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const button = event.currentTarget;
-    const rect = button.getBoundingClientRect();
-    setMenuPosition({
-      top: rect.bottom + 8,
-      left: rect.left
-    });
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const renderContent = () => {
-    switch (selectedSection) {
-      case 'settings':
-        return <Settings />;
-      case 'accounts':
-        return <Accounts />;
-      case 'twitter':
-        return selectedAction ? (
-          <div className="config-panel">
-            {renderModule()}
-          </div>
-        ) : null;
       default:
         return null;
     }
@@ -126,22 +84,16 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-      <div className="dashboard-header">
-        <GasPrice />
-      </div>
       <div className="dashboard-content">
         <div className="dashboard-controls">
           <div className="dashboard-select-wrapper">
             <button
-              className={`dashboard-select-button ${selectedAction && selectedSection === 'twitter' ? 'active' : ''}`}
-              onClick={() => {
-                setIsDropdownOpen(!isDropdownOpen);
-                setSelectedSection('twitter');
-              }}
+              className={`dashboard-select-button ${selectedAction ? 'active' : ''}`}
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             >
               <FiCommand size={16} className="dashboard-select-icon-left" />
               <span className="dashboard-select-button-text">
-                {selectedSection === 'twitter' ? (selectedAction || 'Select Action') : 'Select Action'}
+                {selectedAction || 'Select Action'}
               </span>
               <FiChevronDown size={20} className={`dashboard-select-icon ${isDropdownOpen ? 'rotated' : ''}`} />
             </button>
@@ -166,28 +118,6 @@ const Dashboard = () => {
               </>
             )}
           </div>
-
-          <button
-            className={`dashboard-nav-button ${selectedSection === 'accounts' ? 'active' : ''}`}
-            onClick={() => {
-              setSelectedSection('accounts');
-              setSelectedAction(null);
-            }}
-          >
-            <FiUsers size={16} />
-            <span>Accounts</span>
-          </button>
-
-          <button
-            className={`dashboard-nav-button ${selectedSection === 'settings' ? 'active' : ''}`}
-            onClick={() => {
-              setSelectedSection('settings');
-              setSelectedAction(null);
-            }}
-          >
-            <FiSettings size={16} />
-            <span>Settings</span>
-          </button>
         </div>
         
         <div className="dashboard-divider" />
@@ -198,4 +128,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default TwitterDashboard;
